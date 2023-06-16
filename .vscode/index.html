@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="text-center col-lg-12 col-md-6 col-sm-9 col-xs-12">
+     <marquee  direction="left"> <h2 class="text-light">EVALUATION TABLE</h2> </marquee>
+    <input class="w-25 rounded border-0 p-3" type="text" placeholder="column" id="input1">
+    <input class="w-25 rounded border-0 p-3" type="text" placeholder="row" id="input2"><br> <br>
+    <div class="d-flex">
+    <button class="rounded border-0 bg-warning  w-25" onclick="mut()"><i class="fa fa-times" aria-hidden="true"></i> MUTIPLY</button>
+    <button class="rounded w-25 border-0 bg-primary ms-3" onclick="add()"><i class="fa fa-plus" aria-hidden="true"></i> ADDITION</button>
+    <button class="rounded w-25 border-0 bg-danger ms-3" onclick="sub()"><i class="fa fa-minus" aria-hidden="true"></i> SUBTRACT</button>
+    <button class="rounded w-25 border-0 bg-secondary ms-3" onclick="div()"><b>/</b> DIVISION</button>
+    </div>
+
+    <div id="dis" ></div>
+    </div>
+
+    
+    <script>
+        const mut=()=>{
+            if(isNaN(input1.value || input2.value)){
+                alert("PLEASE ENTER A NUMBER");
+                input1.value=""
+                input2.value=""
+               return dis.innerHTML=""
+            }else if(input1.value==="" && input1.value===""){
+                alert("PLEASE ENTER A NUMBER")
+            }
+            else{
+                dis.innerHTML = "";
+                 table="<table>"
+                    for (var i = 1; i<= input1.value; i++){
+                        table+="<tr>" 
+                        for (var y = 1; y<=input2.value; y++) {     
+                        table+=`<td>${y}*${i} = ${y * i} </td>`
+                    }
+                    table+="</tr>"
+                }   
+            table+="</table>"
+            dis.innerHTML+=table
+            }
+        }
+
+        const add=()=>{
+            if(isNaN(input1.value || input2.value)){
+                alert("PLEASE ENTER A NUMBER");
+                input1.value=""
+                input2.value=""
+               return dis.innerHTML=""
+            }else if(input1.value==="" && input1.value===""){
+                alert("PLEASE ENTER A NUMBER")
+            }
+            else{
+                dis.innerHTML = "";
+                 table="<table>"
+                    for (var i = 1; i<= input1.value; i++){
+                        table+="<tr>" 
+                        for (var y = 1; y<=input2.value; y++) {     
+                        table+=`<td>${y}+${i} = ${y + i} </td>`
+                    }
+                    table+="</tr>"
+                }   
+            table+="</table>"
+            dis.innerHTML+=table
+            }
+        }
+
+        const sub=()=>{
+            if(isNaN(input1.value || input2.value)){
+                alert("PLEASE ENTER A NUMBER");
+                input1.value=""
+                input2.value=""
+               return dis.innerHTML=""
+            }else if(input1.value==="" && input1.value===""){
+                alert("PLEASE ENTER A NUMBER")
+            }
+            else{
+                dis.innerHTML = "";
+                 table="<table>"
+                    for (var i = 1; i<= input1.value; i++){
+                        table+="<tr>" 
+                        for (var y = 1; y<=input2.value; y++) {     
+                        table+=`<td>${y}-${i} = ${y - i} </td>`
+                    }
+                    table+="</tr>"
+                }   
+            table+="</table>"
+            dis.innerHTML+=table
+            }
+        }
+
+        const div=()=>{
+            if(isNaN(input1.value || input2.value)){
+                alert("PLEASE ENTER A NUMBER");
+                input1.value=""
+                input2.value=""
+               return dis.innerHTML=""
+            }else if(input1.value=="" && input1.value==""){
+                alert("PLEASE ENTER A NUMBER")
+            }
+            else{
+                dis.innerHTML = "";
+                 table="<table>"
+                    for (var i = 1; i<= input1.value; i++){
+                        table+="<tr>" 
+                        for (var y = 1; y<=input2.value; y++) {     
+                        table+=`<td>${y}/${i} = ${y / i} </td>`
+                    }
+                    table+="</tr>"
+                }   
+            table+="</table>"
+            dis.innerHTML+=table
+            }
+        }
+        
+
+    </script>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script
+</body>
+</html>
